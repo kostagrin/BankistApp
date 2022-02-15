@@ -86,5 +86,12 @@ const createUserName = accounts => {
   });
 };
 
+let movements = [200, -200, 340, -300, -20, 50, 400, -460];
+const deposits = movements.filter(el => el > 0);
+const withdrawals = movements.filter(el => el < 0);
+console.log(deposits);
+console.log(withdrawals);
+
+
 displayMovements(account1.movements);
 createUserName(accounts);
