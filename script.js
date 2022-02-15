@@ -76,4 +76,15 @@ const displayMovements = function (movements) {
   });
 };
 
+const createUserName = accounts => {
+  accounts.forEach(account => {
+    account.username = account.owner
+      .toLocaleLowerCase()
+      .split(' ')
+      .map(name => name.at(0))
+      .join('');
+  });
+};
+
 displayMovements(account1.movements);
+createUserName(accounts);
